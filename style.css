@@ -41,7 +41,7 @@ h1 {
     word-break: break-all;
 }
 
-button {
+.btnDefault {
     font-size: 16px;
     padding: 8px;
     border: none;
@@ -50,7 +50,7 @@ button {
     border-radius: 5px;
     transition-duration: 0.4s;
 }
-button:hover{
+.btnDefault:hover{
     background-color: rgb(17, 17, 134);
     transform: translateY(-1px);
 }
@@ -110,6 +110,7 @@ thead tr th.action {
 tbody tr td.action {
     text-align: center;
 }
+
 
 @media (max-width: 700px) {
     body {

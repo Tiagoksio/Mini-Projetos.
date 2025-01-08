@@ -14,7 +14,7 @@
   <main class="container">
     <header>
       <h1>Cadastro de Clientes</h1>
-      <button onclick="openModal()" id="new">Incluir</button>
+      <button onclick="openModal()" class="btnDefault" id="new">Incluir</button>
     </header>
 
     <section class="customerList">
@@ -30,15 +30,14 @@
           </tr>
         </thead>
         <tbody>
-          <!-- incluído por JS
           <tr>
             <td>nome</td>
             <td>(61)9999-9999</td>
             <td>teste@teste.com</td>
             <td>quadra01 conjunto z Casa 1</td>
-            <td><button class="bx bx-edit"> <i class='bx bx-edit' ></i> </button></td>
-           -->
-          </tr>
+            <td class="action"><button><i class='bx bx-edit'></i></button></td>
+            <td class="action"><button><i class='bx bx-trash'></i></button></td>
+          </tr>        
         </tbody>
       </section>
     </div>
@@ -58,7 +57,7 @@
           <label for="m-adress">Endereço</label>
           <input id="m-adress" type="text" required />
 
-          <button id="btnSave">Salvar</button>
+          <button class="btnDefault" id="btnSave">Salvar</button>
         </form>
       </div>
     </section>
