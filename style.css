@@ -230,3 +230,8 @@ td button i {
 td button i:first-child {
     margin-right: 10px;
 }
+
+/*
+Resolver bug css da table, que quebra a estilização do container quando cresce
+
+*/

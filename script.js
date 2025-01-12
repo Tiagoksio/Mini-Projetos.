@@ -48,42 +48,51 @@ class Registration {
         this.save = document.querySelector('#btnSave');
         this.customersList = [];
         this.save.addEventListener('click', () => this.register());
+        this.load();
 
     }
 
     register() {
 
         this.customersList.push({
-            'nome': this.name.value,
-            'fone': this.phone.value, 
+            'name': this.name.value,
+            'phone': this.phone.value, 
             'email': this.email.value, 
-            'endereco': this.adress.value
+            'adress': this.adress.value
         });
         
         this.vlocalStorage.setItems(this.customersList);
-
-        /*
-        let tr = document.createElement('tr')
-
-        tr.innerHTML = `
-            <td>${this.name.value}</td>
-            <td>${this.phone.value}</td>
-            <td>${this.email.value}</td>
-            <td>${this.adress.value}</td>
-            <td class="action">
-            </td>
-            <td class="action">
-            </td>
-        `
-        this.tbody.appendChild(tr)
-
-        */
         
 
     }
 
     load () {
-       
+        this.customersList = this.vlocalStorage.getItems();
+
+        this.customersList.forEach(e => {
+            this.insertItem(e)
+        });
+    }
+
+
+    insertItem(item, index) {
+        // O parâmetro index seria para identificar os botões de edição e deleção, porém falta uma solução. Poderia implementar uma função direto no html, talvez.
+
+        let tr = document.createElement('tr')
+
+        tr.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.phone}</td>
+            <td>${item.email}</td>
+            <td>${item.adress}</td>
+            <td class="action">
+                <button><i class='bx bx-edit'></i></button>
+            </td>
+            <td class="action">
+                <button><i class='bx bx-trash'></i></button>
+            </td>
+        `
+        this.tbody.appendChild(tr)    
     }
 
     edit () {
@@ -98,7 +107,3 @@ class Registration {
 const constlocalStorage = new Storage('dbLS');
 const modal = new ModalController();
 const crud = new Registration(modal, constlocalStorage);
-
-
-// LocalStorage inicializando --> Verificar carregamento dos dados.
-
