@@ -69,8 +69,8 @@ class Registration {
     load () {
         this.customersList = this.vlocalStorage.getItems();
 
-        this.customersList.forEach(e => {
-            this.insertItem(e)
+        this.customersList.forEach((e, index) => {
+            this.insertItem(e, index)
         });
     }
 
@@ -86,20 +86,29 @@ class Registration {
             <td>${item.email}</td>
             <td>${item.adress}</td>
             <td class="action">
-                <button><i class='bx bx-edit'></i></button>
+                <button class='edit-btn'><i class='bx bx-edit'></i></button>
             </td>
             <td class="action">
-                <button><i class='bx bx-trash'></i></button>
+                <button class='delete-btn'><i class='bx bx-trash'></i></button>
             </td>
         `
+        tr.querySelector('.edit-btn').addEventListener('click', () => this.edit(index));
+        tr.querySelector('.delete-btn').addEventListener('click', () => this.delete(index));
+
         this.tbody.appendChild(tr)    
     }
 
-    edit () {
+    edit (index) {
+        this.name.value = this.customersList[index].name
+        this.phone.value = this.customersList[index].phone
+        this.email.value = this.customersList[index].email
+        this.adress.value = this.customersList[index].adress
+        this.modal.openModal()
 
     }
 
-    delete () {
+    delete (index) {
+        alert(`Delete ${index}`)
 
     }
 }
