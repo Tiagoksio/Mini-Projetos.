@@ -6,7 +6,6 @@ class ModalController {
         this.modal.addEventListener('click', () => this.closeModal());
     }
 
-
     openModal() {
         this.modal.classList.add('active');
     }
@@ -46,29 +45,36 @@ class Registration {
         this.email = document.querySelector('#m-email');
         this.adress = document.querySelector('#m-adress');
         this.save = document.querySelector('#btnSave');
-        this.customersList = [];
+        this.customersList = this.vlocalStorage.getItems();
+        this.editIndex = null;
         this.save.addEventListener('click', () => this.register());
         this.load();
 
     }
-
     register() {
 
-        this.customersList.push({
-            'name': this.name.value,
-            'phone': this.phone.value, 
-            'email': this.email.value, 
-            'adress': this.adress.value
-        });
+        if (this.editIndex === null) {
+            this.customersList.push({
+                'name': this.name.value,
+                'phone': this.phone.value, 
+                'email': this.email.value, 
+                'adress': this.adress.value
+            });
+            this.editIndex = null;
+        } else {
+            this.customersList[this.editIndex] = {
+                'name': this.name.value,
+                'phone': this.phone.value, 
+                'email': this.email.value, 
+                'adress': this.adress.value
+            }  
+        } 
         
         this.vlocalStorage.setItems(this.customersList);
-        
-
     }
 
     load () {
-        this.customersList = this.vlocalStorage.getItems();
-
+        this.tbody.innerHTML = '';
         this.customersList.forEach((e, index) => {
             this.insertItem(e, index)
         });
@@ -76,7 +82,6 @@ class Registration {
 
 
     insertItem(item, index) {
-        // O parâmetro index seria para identificar os botões de edição e deleção, porém falta uma solução. Poderia implementar uma função direto no html, talvez.
 
         let tr = document.createElement('tr')
 
@@ -95,20 +100,23 @@ class Registration {
         tr.querySelector('.edit-btn').addEventListener('click', () => this.edit(index));
         tr.querySelector('.delete-btn').addEventListener('click', () => this.delete(index));
 
-        this.tbody.appendChild(tr)    
+        this.tbody.appendChild(tr); 
     }
 
     edit (index) {
-        this.name.value = this.customersList[index].name
-        this.phone.value = this.customersList[index].phone
-        this.email.value = this.customersList[index].email
-        this.adress.value = this.customersList[index].adress
-        this.modal.openModal()
+        this.name.value = this.customersList[index].name;
+        this.phone.value = this.customersList[index].phone;
+        this.email.value = this.customersList[index].email;
+        this.adress.value = this.customersList[index].adress;
+        this.editIndex = index;
+        this.modal.openModal();
 
     }
 
     delete (index) {
-        alert(`Delete ${index}`)
+        this.customersList.splice(index, 1);
+        this.vlocalStorage.setItems(this.customersList);
+        this.load()
 
     }
 }
@@ -116,3 +124,5 @@ class Registration {
 const constlocalStorage = new Storage('dbLS');
 const modal = new ModalController();
 const crud = new Registration(modal, constlocalStorage);
+
+// Incluir mascara para o form, validação de dados e resolver o bug do css quebrar a formatação. 
