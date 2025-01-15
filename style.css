@@ -55,18 +55,18 @@ h1 {
     transform: translateY(-1px);
 }
 
-.custumerList {
+.customerList {
     padding: 10px;
     width: auto;
     height: inherit;
     overflow: auto;
 }
-.custumerList::-webkit-scrollbar {
+.customerList::-webkit-scrollbar {
     width: 12px;
     background-color: whitesmoke; 
   }
   
-.custumerList::-webkit-scrollbar-thumb {
+.customerList::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: darkgray; 
 }
@@ -230,8 +230,3 @@ td button i {
 td button i:first-child {
     margin-right: 10px;
 }
-
-/*
-Resolver bug css da table, que quebra a estilização do container quando cresce
-
-*/
