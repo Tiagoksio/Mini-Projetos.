@@ -52,24 +52,23 @@ class Registration {
 
     }
     register() {
+        let customer = {
+            'name': this.name.value,
+            'phone': this.phone.value, 
+            'email': this.email.value, 
+            'adress': this.adress.value
+        }
+        if(!this.validation(customer)) {
+            return;
+        }
 
         if (this.editIndex === null) {
-            this.customersList.push({
-                'name': this.name.value,
-                'phone': this.phone.value, 
-                'email': this.email.value, 
-                'adress': this.adress.value
-            });
+            this.customersList.push(customer);
             this.editIndex = null;
         } else {
-            this.customersList[this.editIndex] = {
-                'name': this.name.value,
-                'phone': this.phone.value, 
-                'email': this.email.value, 
-                'adress': this.adress.value
-            }  
+            this.customersList[this.editIndex] = customer;
         } 
-        
+
         this.vlocalStorage.setItems(this.customersList);
     }
 
@@ -119,10 +118,28 @@ class Registration {
         this.load()
 
     }
+
+    validation(customer){
+        if (customer.name === '' || 
+            customer.phone ==='' || 
+            customer.email === '' || 
+            customer.adress === ''
+        ) {
+            alert("Preencha todos os campos!");
+            return false;
+        } else if (customer.phone.length < 11 || customer.phone.length > 11) {
+            alert("Digite o telefone completo com o DDD!");
+            return false;
+        } else if (customer.email.indexOf('@') == -1){
+            alert("Digite um Email válido!")
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 }
 
 const constlocalStorage = new Storage('dbLS');
 const modal = new ModalController();
 const crud = new Registration(modal, constlocalStorage);
-
-// Incluir mascara para o form, validação de dados e resolver o bug do css quebrar a formatação. 
