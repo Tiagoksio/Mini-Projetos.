@@ -1,6 +1,6 @@
 # Currículo
 
-![Página](/_img/tela_gif.gif)
+![Página](/curriculo/_img/tela_gif.gif)
 
 Um modelo de currículo para práticar o uso do html e css na construção de páginas.
 
