@@ -1,5 +1,87 @@
 /* 
-* Fonte: Lato (google fonts)
 * Cor das fontes: #ff6b28
 * Cor da top bar e da footer: #ff6b28 
 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+
+    --topBarFooter: #ff6b28;
+    --fontes: #ff6b28;
+
+    font-family: 'lato',Arial, Helvetica, sans-serif;
+}
+header {
+    width: 100vw;
+}
+
+.top-bar {
+    background-color: var(--topBarFooter);
+    text-align: center;
+    padding: 25px;
+}
+.top-bar img {
+    width: 360px;
+}
+
+.banner-container {
+    width: 100%;
+    
+}
+
+.banner {
+    width: 100%;
+    height: 555px;
+    object-fit: cover;
+    object-position: top;
+/*calc(100%) calc(100% + 230px);*/
+    
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+
+}
+
+h1, h2 {
+    color: var(--fontes);
+    font-weight: bolder;
+}
+
+h1 {
+    font-size: 5.6rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+    margin: 10px;
+}
+
+.title {
+    margin: 50px;
+    padding: 50px;
+}
+
+p, li {
+    font-size: 2.0rem;
+}
+
+button {
+    width: 250px;
+    padding: 15px;
+    color: white;
+    background-color: var(--fontes);
+    border: none;
+    border-radius: 20px;
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+footer {
+    background-color: var(--topBarFooter);
+    color: white;
+}
