@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+
+    --btns_top-bar: #48C5CE;
+    --text_color_1: white;
+    --text_color_2: black;
+
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.top-bar {
+    background-color: var(--btns_top-bar);
+    text-align: center;
+    padding: 10px;
+}
+
+.title {
+    font-size: 2.6rem;
+    color: var(--text_color_1);
+}
+
+header {
+    height: 550px;
+    background-image: url(./img/people.jpg);
+}
+
+
+/*
+font arial, helvetica, sen serif
+font size title 26px
+padding no header: 10px
+background black
+
+*/
+
