@@ -19,7 +19,7 @@ body {
     max-width: 1000px;
     margin: auto;
     position: relative;
-    background-color: rgb(22, 18, 18);
+    background-color: #202121;
 }
 
 .top-bar {
@@ -33,69 +33,74 @@ body {
     color: var(--text_color_1);
 }
 
-header {
-    height: 550px;
-    background-image: url(./img/people.jpg);
-}
-
 .opt-in_page {
     background-color: rgba(255, 255, 255, 0.8);
     
-    height: 450px;
-    width: 300px;
+    max-width: 230px;    
+    padding: 20px;
+    float: right;
+}
 
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    
-    padding: 15px;
+.form-box {
+    background-image: url(./img/people.jpg);
+    background-size: cover;
+    overflow: hidden;
+
 }
 
 .opt-in_page h2, p {
     color: var(--text_color_2);
+    margin: 0 0 15px 0;
 }
 
 .opt-in_page h2{
-    font-size: 1.6rem;
-    margin: 0 0 10px 0;
-    
+    font-size: 1.6rem;    
 }
 
 
 .opt-in_page p{
     font-size: 1.4rem;
-
 }
 
 input, select {
     background-color: aliceblue;
 
     border: none;
-    display: block;
     margin-top: 10px;
-    height: 25px;
     width: 100%;
 
-    padding: 5px;
+    padding: 10px;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    background-image: url(./img/arrow.jpg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+
 }
 
 .btn-submit {
     width: 100%;
     height: 30px;
     font-size: 1.6rem;
+    font-weight: bold;
     border: none;
     background-color: var(--btns_top-bar);
     color: var(--text_color_1);
     margin-top: 10px;
-
-
 }
 
 .presenter {
-    max-width: 500px;
-    margin: auto;
-    padding: 30px;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
     overflow: hidden;
+    padding: 40px;
 }
 
 .presenter p, h2 {
@@ -105,14 +110,16 @@ input, select {
 
 .presenter h2 {
     font-size: 2.4rem;
+    margin-top: 0;
 }
 
 .presenter p {
-    font-size: 1.4rem;
+    font-size: 1.0rem;
+    text-align: left;
 }
 
 .presenter-img {
     float: left;
-    height: 250px;
-    margin-right: 50px;
+    height: 160px;
+    margin-right: 20px;
 }
