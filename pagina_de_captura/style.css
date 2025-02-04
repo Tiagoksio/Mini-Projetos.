@@ -123,3 +123,24 @@ select {
     height: 160px;
     margin-right: 20px;
 }
+
+@media screen and (max-width: 635px) {
+    
+    .presenter-img {
+        float: none;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    
+    .presenter {
+        width: 100%;
+    }
+    
+    .opt-in_page {
+        float: none;
+        margin: auto;
+        max-width: 80%;
+    }
+}
