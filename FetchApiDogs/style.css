@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    margin: 100px;
+    display: inline-block;
+    background-color: blueviolet;
+}
+
+.unboxingDog{
+    position: absolute;
+    max-height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateAndGrow 3s;
+}
+
+@keyframes rotateAndGrow {
+    0% {
+        width: 0px;
+        transform: translate(-50%, -260%) rotate(0deg); /* Estado inicial sem rotação */
+    }
+    100% {
+        width: 200px;
+        transform: translate(-50%, -50%) rotate(1080deg); /* Rotaciona a imagem em 360 graus */
+
+    }
+}
+
+.box:hover {
+    animation: shakeAnimation 0.5s infinite alternate;
+}
+@keyframes shakeAnimation {
+    0% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
