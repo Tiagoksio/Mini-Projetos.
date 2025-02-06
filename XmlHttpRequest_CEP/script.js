@@ -36,7 +36,6 @@ class DomController {
             <dt>LOGRADOURO<dd>${this.jsonResponse.logradouro}</dd></dt>
             </dl>`
     }
-
 }
 
 const appCep = new DomController();

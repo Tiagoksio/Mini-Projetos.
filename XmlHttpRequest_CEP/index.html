@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Consulta de Endereço através do CEP</h1>
-    </header>
-    <section>
-        <input type="text" id="iCep" name="nCep" placeholder="Digite apenas números">
-        <button type="submit" id="search">Consultar</button>
-        <h2>Resultado</h2>
-        <p id="resultado">
-            <!-- resultado da consulta -->
-        </p>
-    </section>    
+    <main class="container">
+        <header>
+            <h1>Consulta de Endereço através do CEP</h1>
+        </header>
+        <section class="content">
+            <input type="text" id="iCep" name="nCep" placeholder="Digite apenas números">
+            <button type="submit" id="search">Consultar</button>
+            <table id="resultado">
+                <!-- resultado da consulta -->
+            </table>
+        </section>    
+    </main>
 </body>
 <script src="script.js"></script>
 </html>
