@@ -19,11 +19,15 @@ function loadImage() {
 
 
 function imgAnimation() {
-    imgDog.classList.add('unboxingDog')    
+    imgDog.classList.add('unboxingDog');    
 }
 
+function unboxingDogFunc() {
+    loadImage();
+    imgAnimation();
+}
 
-box.addEventListener("click", () => loadImage())
+box.addEventListener("click", () => unboxingDogFunc())
 
 
 document.querySelector('.container').onclick = e => {
