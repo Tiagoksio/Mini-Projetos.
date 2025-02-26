@@ -36,22 +36,37 @@
 }
 
 .hero {
-    width: 50%;
+    width: 100%;
     background-image: url("./pexels-marcela-artola-1675360178-28454507.jpg");
     background-size: cover;
     background-position: calc(-50%);
+    
+
+    
 }
 
 
 .home-page {
-    background-color: aliceblue;
+    background-color: rgb(212, 226, 238, 0.9);
     color: black;
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 28px;
+
+    max-width: 500px;
+    height: 80vh;
+
+    padding: 28px;
+
+
+    margin: 28px auto;
+
+    border-radius: 5px;
+
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+
 }
 
 .home-page > h1 {
