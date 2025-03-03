@@ -8,8 +8,11 @@ Currículo utilizando html com tags semânticas e css com flexbox e media query
 
 ---
 
-## [fetchApi](https://github.com/Tiagoksio/Mini-Projetos./tree/master/FetchApiDogs)
+## [FetchApi](https://github.com/Tiagoksio/Mini-Projetos./tree/master/FetchApiDogs)
 ![fetchApi](./mediaReadMe/fetchapi.gif)
+A aplicação gera fotos aleatórias de cachorros ao clicar na caixa. Foi utilizado seleção de elementos, requisição Fetch, manipulação de classes, eventos e animações css com o keyframe.
+
+---
 
 ## [CRUD](https://github.com/Tiagoksio/Mini-Projetos./tree/master/crud_localStorage)
 ![crud_localStorage](./mediaReadMe/crud.gif)
